@@ -1,6 +1,6 @@
 {
   "name": "postcss-simple-shadow",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Postcss plugin for simple drop shadows based on Material Design.",
   "main": "index.js",
   "scripts": {
