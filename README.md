@@ -13,5 +13,5 @@ shadow: &lt;depth&gt;;
 shadow: 10;
 
 /* output.css */
-box-shadow: 0px 5px 7px -3px rgba(0, 0, 0, .2), 0px 10px 16px 2px rgba(0,0,0, .14), 0px 4px 20px 4px rgba(0,0,0, .12);
+box-shadow: box-shadow: 0px 5px 7px -3px rgba(0, 0, 0, 0.2), 0px 10px 16px 2px rgba(0, 0, 0, 0.15), 0px 4px 20px 4px rgba(0, 0, 0, 0.09);
 ```
