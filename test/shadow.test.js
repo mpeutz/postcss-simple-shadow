@@ -52,3 +52,18 @@ test('handles shadows depth 25', t => {
     '.shadow { box-shadow: 0px 12px 16px -8px rgba(0, 0, 0, 0.35), 0px 25px 40px 4px rgba(0, 0, 0, 0.25), 0px 10px 48px 9px rgba(0, 0, 0, 0.15); }'
   );
 });
+
+test('handles inline shadows depth 25', t => {
+  return run(t,
+    '.shadow { box-shadow: 0 0 8px #000, shadow(25), 0 0 8px #fff; }',
+    '.shadow { box-shadow: 0 0 8px #000, 0px 12px 16px -8px rgba(0, 0, 0, 0.35), 0px 25px 40px 4px rgba(0, 0, 0, 0.25), 0px 10px 48px 9px rgba(0, 0, 0, 0.15), 0 0 8px #fff; }'
+  );
+});
+
+test('handles inline shadows depth 15 plus bevel', t => {
+  return run(t,
+    '.shadow { box-shadow: inset 0 1px 1px #000, shadow(15), inset 0 -1px 1px #fff; }',
+    '.shadow { box-shadow: inset 0 1px 1px #000, 0px 7px 10px -5px rgba(0, 0, 0, 0.25), 0px 15px 24px 2px rgba(0, 0, 0, 0.18), 0px 6px 29px 5px rgba(0, 0, 0, 0.11), inset 0 -1px 1px #fff; }'
+  );
+});
+
