@@ -1,5 +1,7 @@
 # Simple Shadow Postcss Plugin
 
+[![Build Status](https://travis-ci.org/mpeutz/postcss-simple-shadow.svg?branch=master)](https://travis-ci.org/mpeutz/postcss-simple-shadow)
+
 Postcss function that will produce a Material design style drop shadow. There are 25 depths ranging from 0 25; 0 having no shadow while 25 has the most.
 
 ### Usage
