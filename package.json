@@ -8,7 +8,8 @@
   },
   "keywords": [
     "shadow",
-    "postcss"
+    "postcss",
+    "postcss-plugin"
   ],
   "author": "Mike Peutz <mpeutz@gmail.com>",
   "license": "MIT",
@@ -16,6 +17,10 @@
     "ava": "^1.2.1",
     "postcss": "^7.0.14",
     "postcss-value-parser": "^3.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpeutz/postcss-simple-shadow.git"
   },
   "dependencies": {
     "tinycolor2": "^1.4.1"

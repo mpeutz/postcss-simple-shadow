@@ -2,6 +2,10 @@ const postcss = require('postcss');
 const valueParser = require('postcss-value-parser');
 const tinycolor = require('tinycolor2');
 
+const errorContext = {
+	plugin: 'postcss-simple-shadow'
+};
+
 module.exports = postcss.plugin('shadow', () => {
 
 
@@ -13,8 +17,9 @@ module.exports = postcss.plugin('shadow', () => {
                 function shadows(depth, hue) {
 
                     if (depth < 0 || depth > 25) {
-                        result.warn('shadow depth is out of range. [0-25]');
+                        throw decl.error('shadow depth is out of range. [0-25]', errorContext);
                     }
+
 
                     const alpha = (num, in_min, in_max, out_min, out_max) => {
                         return Number(((num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min).toFixed(2));
@@ -36,6 +41,11 @@ module.exports = postcss.plugin('shadow', () => {
                     } else {
                         shadowParams = [val, '#000'];
                     }
+
+                    if (! tinycolor(shadowParams[1]).isValid()) {
+                        throw decl.error('Not a valid color', errorContext);
+                    }
+
 
                     let dpth = parseInt(shadowParams[0]);
                     let col = shadowParams[1];
